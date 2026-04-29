@@ -174,6 +174,8 @@ The following documents exist on real corporate projects but are **deliberately 
 | 29 Apr 2026 | GitHub repository created at github.com/catherine-echendu/workforce-reward-satisfaction-analysis. Project structure committed with documented READMEs. | Locked |
 | 29 Apr 2026 | Business question wording tightened to explicitly name retention risk and reward investment priorities, aligned with CV framing. | Locked |
 | 29 Apr 2026 | Decision-tree modelling added to the planned modelling stage for segment identification, alongside weighted regression. | Locked |
+| 29 Apr 2026 | UKDS account found deactivated due to two-year inactivity. Data deleted same day per EUL clause 17. New personal user account registered at UKDS. Access application for WERS 2011 (SN 7226) submitted. Weighted rerun on hold pending approval. | In progress |
+| 29 Apr 2026 | .gitignore confirmed to have prevented any individual-level data from reaching GitHub throughout the project. Data governance controls worked as intended. | Confirmed |
 
 
 ---
