@@ -2,7 +2,7 @@
 
 **Project:** Impact of Pay and Benefits on Job Satisfaction (Revisit)
 **Analyst:** Catherine Echendu
-**Last updated:** 28 April 2026
+**Last updated:** 29 April 2026
 **Purpose:** Single source of truth for every methodology decision in this project. Captures what is locked, what is pending, and the reasoning behind each choice. Updated whenever a new decision is made.
 
 ---
@@ -12,7 +12,7 @@
 **Stakeholder:** Head of People Analytics / HR Director, large UK service-sector employer (500+ employees).
 
 **Business question (locked, working version):**
-If a large UK employer can improve only a small number of reward levers in the next 12–24 months, which changes to pay, pay experience, and key benefits are most likely to improve employee job satisfaction?
+If a large UK employer can improve only a small number of reward levers in the next 12 to 24 months, which changes to pay, pay experience, and key benefits are most strongly associated with higher employee job satisfaction, and what does that imply for retention risk and reward investment priorities?
 
 **Note:** A tightened, commercially-framed version of the business question will be drafted as setup artefact 3.
 
@@ -103,7 +103,8 @@ For all variables: any value outside the documented valid range, including `−9
 
 | Layer | Tool | Status |
 |---|---|---|
-| Cleaning, indexing, modelling | R / RStudio | In use |
+| Cleaning, indexing, regression modelling | R / RStudio | In use |
+| Decision-tree modelling for segment identification | R (rpart or similar) | Planned |
 | Weighted analysis | R `srvyr` package | Planned |
 | Cross-tool validation | SQL | Planned |
 | QA workbook | Excel | Planned |
@@ -144,7 +145,7 @@ The following documents exist on real corporate projects but are **deliberately 
 |---|---|---|
 | D2 | Frozen benefits lever list (Path A vs B) | Pending |
 | D3 | Grouped pay band rule | Deferred to rerun |
-| D4 | Modelling specification | Deferred to modelling phase |
+| D4 | Modelling specification: weighted regression as primary analysis, decision-tree modelling for segment identification | Deferred to modelling phase |
 | D5 | Power BI page structure | Deferred to dashboard phase |
 | D6 | Commercial translation paragraph | Setup artefact 3 |
 | D7 | Folder structure + script section labels | Setup artefact 2 |
@@ -170,6 +171,9 @@ The following documents exist on real corporate projects but are **deliberately 
 | 27 Apr 2026 | Project documentation set defined (4 documents) | Locked |
 | 28 Apr 2026 | Commercial translation paragraph locked (artefact 3). CIPD (2024) and WERS UKDS citation confirmed as reference sources. | Locked |
 | 28 Apr 2026 | Park list locked (artefact 4). 11 deferred items documented with triggers. | Locked |
+| 29 Apr 2026 | GitHub repository created at github.com/catherine-echendu/workforce-reward-satisfaction-analysis. Project structure committed with documented READMEs. | Locked |
+| 29 Apr 2026 | Business question wording tightened to explicitly name retention risk and reward investment priorities, aligned with CV framing. | Locked |
+| 29 Apr 2026 | Decision-tree modelling added to the planned modelling stage for segment identification, alongside weighted regression. | Locked |
 
 
 ---
