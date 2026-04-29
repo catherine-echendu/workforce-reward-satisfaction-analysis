@@ -1,0 +1,36 @@
+# ============================================================
+# .gitignore for WERS Revisit project
+# ============================================================
+# Raw WERS data must not be uploaded. UKDS End User Licence
+# does not permit redistribution of the microdata.
+# ============================================================
+
+# ---- 1. Raw data (UKDS licensed, must not be uploaded) ----
+00_data/raw/
+00_data/processed/
+*.dta
+*.sav
+*.rds
+*.rda
+*.RData
+
+# ---- 2. R working files ------------------------------------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+
+# ---- 3. Operating system clutter ---------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 4. Excel temp files -----------------------------------
+~$*.xlsx
+~$*.xls
+
+# ---- 5. Temporary outputs ----------------------------------
+*.log
+*.tmp
+*.bak
