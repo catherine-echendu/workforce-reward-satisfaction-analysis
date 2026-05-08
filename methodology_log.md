@@ -2,7 +2,7 @@
 
 **Project:** Impact of Pay and Benefits on Job Satisfaction (Revisit)
 **Analyst:** Catherine Echendu
-**Last updated:** 29 April 2026
+**Last updated:** 08 May 2026
 **Purpose:** Single source of truth for every methodology decision in this project. Captures what is locked, what is pending, and the reasoning behind each choice. Updated whenever a new decision is made.
 
 ---
@@ -12,15 +12,23 @@
 **Stakeholder:** Head of People Analytics / HR Director, large UK service-sector employer (500+ employees).
 
 **Business question (locked, working version):**
-If a large UK employer can improve only a small number of reward levers in the next 12 to 24 months, which changes to pay, pay experience, and key benefits are most strongly associated with higher employee job satisfaction, and what does that imply for retention risk and reward investment priorities?
+If a large UK employer can improve only a small number of reward levers in the next 12–24 months, which changes to pay, pay experience, and key benefits are most likely to improve employee job satisfaction?
 
-**Note:** A tightened, commercially-framed version of the business question will be drafted as setup artefact 3.
+**Commercial translation (locked, artefact 3, 28 Apr 2026):**
+If a large UK employer can improve only a small number of reward
+levers in the next 12 to 24 months, which changes to pay, pay
+experience, and key benefits are most strongly associated with
+higher employee job satisfaction, and what does that imply for
+retention risk and reward investment priorities?
 
 **Project phase framing (locked):**
 - *Draft phase* = exploratory, unweighted analysis (current Sections 3–5 of the Word report).
 - *Final phase* = WERS-compliant, weighted analysis. All headline numbers and modelling come from this phase.
 
-**Current report status:** Word report Sections 1–5 drafted at draft-phase standard. Sections covering grouped pay bands, benefits descriptives, modelling, executive summary, and portfolio outputs still to be completed.
+**Current report status:** Word report Sections 1 to 5 drafted
+at draft-phase standard. Weighted descriptive analysis complete.
+Modelling, benefits sections, executive summary, and portfolio
+outputs still to be completed.
 
 ---
 
@@ -31,6 +39,18 @@ If a large UK employer can improve only a small number of reward levers in the n
 **Raw file:** 21,981 employees × 151 variables.
 
 **Unit of analysis:** Individual employee, clustered within workplace (`serno`).
+
+**08 May 2026 update:**
+
+Raw WERS SEQ file opened successfully in R. Dataset confirmed as 21,981 rows, 151 variables.
+All 16 key analysis variables found. 
+Weight variable confirmed as seqwtnrc_apr13 in this file version.
+Converted to numeric working variable seqwtnrc in all analysis scripts. 
+
+Cleaning applied variable by variable per locked NA rules. Negative WERS missing codes and out-of-range values set to NA.No blanket row deletion used. Cleaned dataset saved as research_clean.rds with 21,981 rows and 166 columns. 
+
+Most variables low missingness. 
+Flexi-time (qb1a_clean, 10.9%) and job sharing (qb1b_clean, 17.5%) had higher missingness and will be interpreted with caution in reporting.
 
 ---
 
@@ -49,6 +69,14 @@ N = 21,784 · mean = 3.63 · SD = 0.74 · median = 3.71 · IQR = 3.14 to 4.14
 Bands: Low (<3) 16.4% · Moderate (3 to <4) 46.2% · High (≥4) 37.4%
 
 **Status:** Will be re-run weighted in the final phase. Numbers expected to shift slightly; pattern expected to hold.
+
+**08 May 2026 update:**
+
+Job satisfaction index (job_sat_index) rebuilt in R pipeline. 
+Confirmed: valid N 21,784, missing 197 (0.9%), mean 3.629, median 3.714, SD 0.740. 
+Matches draft mean of 3.63 closely, confirming cleaning and metric logic are consistent.
+Weighted final mean 3.65 (CI 3.62 to 3.67). 
+All final outputs use weighted version. Dataset saved as research_clean_with_index.rds..
 
 ---
 
@@ -71,6 +99,9 @@ Bands: Low (<3) 16.4% · Moderate (3 to <4) 46.2% · High (≥4) 37.4%
 4. Benefits descriptives, weighted from the start.
 5. Modelling, weighted.
 
+08 May 2026 
+Weight variable confirmed in this version of the WERS file as
+seqwtnrc_apr13 (not seqwtnrc). All scripts updated accordingly.
 ---
 
 ## 5. Pay variables (locked)
@@ -79,17 +110,45 @@ Bands: Low (<3) 16.4% · Moderate (3 to <4) 46.2% · High (≥4) 37.4%
 
 **Objective pay (pay band):** `qe11_clean`, 14 ordered bands. To be supplemented with an HR-readable grouped pay band variable for stakeholder-facing analysis. The final grouping rule will be specified during the rerun phase.
 
+**D3 locked: 08 May 2026**
+Grouped pay band rule confirmed. Three tiers based on UK
+earnings distribution (ONS ASHE 2023):
+- Lower: Bands 1 to 5 (under approximately £25,000)
+- Middle: Bands 6 to 9 (approximately £25,000 to £49,999)
+- Upper: Bands 10 to 14 (£50,000 and above)
+Reference: ONS Annual Survey of Hours and Earnings 2023.
+
+Weighted results: Lower 3.72, Middle 3.57, Upper 3.68.
+U-shape confirmed. Middle earners show lowest satisfaction.
+
 ---
 
-## 6. Benefits levers
 
-**Status:** Pending Decision 2.
+## 6. Benefits levers (locked, Decision 2, Path A)
 
-Five candidate levers cleaned in R:
-- **Core benefits (3):** pension (`qe12mul6_clean`), extra hours pay (`qe12mul5_clean`), training (`qb3_clean`).
-- **Flexible working items (2):** flexi-time (`qb1a_clean`), job sharing (`qb1b_clean`). Note: these are two specific arrangements from a wider flexible-working item set in WERS, not the full picture.
+**Original status before 08 May 2026:** Pending Decision 2.
+Five candidate levers were identified: pension (qe12mul6_clean),
+extra hours pay (qe12mul5_clean), training (qb3_clean),
+flexi-time (qb1a_clean), job sharing (qb1b_clean).
+Performance bonus (qe12mul2/3/4) was also under consideration
+as Path B.
+**DECISION LOCKED: 08 May 2026**
 
-Decision pending: keep this five-lever set, or expand to include performance bonus (`qe12mul2/3/4`).
+**Locked lever set (5 levers):**
+- **Core benefits (3):** pension (`qe12mul6_clean`), extra hours pay
+  (`qe12mul5_clean`), training (`qb3_clean`).
+- **Flexible working items (2):** flexi-time (`qb1a_clean`), job
+  sharing (`qb1b_clean`).
+
+**Rationale:** Path A keeps the analysis focused, interpretable,
+and suitable for a portfolio MVP. These five levers are
+understandable to HR and operational stakeholders, require no
+additional cleaning work, and allow the project to move into
+weighted analysis, SQL validation, and dashboarding efficiently.
+
+**Future extension (parked as P15):** test performance bonus
+variables `qe12mul2`, `qe12mul3`, `qe12mul4` as an additional
+reward layer after the MVP analysis is complete..
 
 ---
 
@@ -103,11 +162,10 @@ For all variables: any value outside the documented valid range, including `−9
 
 | Layer | Tool | Status |
 |---|---|---|
-| Cleaning, indexing, regression modelling | R / RStudio | In use |
-| Decision-tree modelling for segment identification | R (rpart or similar) | Planned |
-| Weighted analysis | R `srvyr` package | Planned |
+| Cleaning, indexing, modelling | R / RStudio | In use |
+| Weighted analysis | R `srvyr` package | In use |
 | Cross-tool validation | SQL | Planned |
-| QA workbook | Excel | Planned |
+| QA workbook | Excel | In use |
 | Stakeholder delivery | Power BI | Planned |
 | Documentation | Word + GitHub README | Word in use; README planned |
 
@@ -141,11 +199,14 @@ The following documents exist on real corporate projects but are **deliberately 
 
 ## 10. Decisions still pending
 
+*This table shows only currently unresolved decisions.
+Completed decisions are recorded permanently in Section 11.*
+
 | # | Decision | Status |
 |---|---|---|
 | D2 | Frozen benefits lever list (Path A vs B) | Pending |
 | D3 | Grouped pay band rule | Deferred to rerun |
-| D4 | Modelling specification: weighted regression as primary analysis, decision-tree modelling for segment identification | Deferred to modelling phase |
+| D4 | Modelling specification | Deferred to modelling phase |
 | D5 | Power BI page structure | Deferred to dashboard phase |
 | D6 | Commercial translation paragraph | Setup artefact 3 |
 | D7 | Folder structure + script section labels | Setup artefact 2 |
@@ -171,12 +232,13 @@ The following documents exist on real corporate projects but are **deliberately 
 | 27 Apr 2026 | Project documentation set defined (4 documents) | Locked |
 | 28 Apr 2026 | Commercial translation paragraph locked (artefact 3). CIPD (2024) and WERS UKDS citation confirmed as reference sources. | Locked |
 | 28 Apr 2026 | Park list locked (artefact 4). 11 deferred items documented with triggers. | Locked |
-| 29 Apr 2026 | GitHub repository created at github.com/catherine-echendu/workforce-reward-satisfaction-analysis. Project structure committed with documented READMEs. | Locked |
-| 29 Apr 2026 | Business question wording tightened to explicitly name retention risk and reward investment priorities, aligned with CV framing. | Locked |
-| 29 Apr 2026 | Decision-tree modelling added to the planned modelling stage for segment identification, alongside weighted regression. | Locked |
-| 29 Apr 2026 | UKDS account found deactivated due to two-year inactivity. Data deleted same day per EUL clause 17. New personal user account registered at UKDS. Access application for WERS 2011 (SN 7226) submitted. Weighted rerun on hold pending approval. | In progress |
-| 29 Apr 2026 | .gitignore confirmed to have prevented any individual-level data from reaching GitHub throughout the project. Data governance controls worked as intended. | Confirmed |
-
+| 08 May 2026 | Benefits lever list locked: Path A, five levers. Performance bonus parked as future extension (P15). | Locked |
+| 08 May 2026 | Raw data confirmed: 21,981 rows, 151 variables, all key variables found | Confirmed |
+| 08 May 2026 | Weight variable confirmed as seqwtnrc_apr13, converted to seqwtnrc in scripts | Confirmed |
+| 08 May 2026 | Cleaning script run: research_clean.rds saved, 166 columns | Confirmed |
+| 08 May 2026 | job_sat_index built: mean 3.629, valid N 21,784 | Confirmed |
+| 08 May 2026 | D3 locked: grouped pay bands Lower/Middle/Upper, ONS ASHE 2023 anchor | Locked |
+| 08 May 2026 | Training confirmed as strongest benefit lever: 3.46 to 4.00 range | Confirmed |
 
 ---
 
