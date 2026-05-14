@@ -2,7 +2,7 @@
 
 **Project:** Impact of Pay and Benefits on Job Satisfaction (Revisit)
 **Analyst:** Catherine Echendu
-**Last updated:** 13 May 2026
+**Last updated:** 14 May 2026
 **Purpose:** Single source of truth for every methodology decision in this project. Captures what is locked, what is pending, and the reasoning behind each choice. Updated whenever a new decision is made.
 
 ---
@@ -219,15 +219,15 @@ Completed decisions are recorded permanently in Section 11.*
 
 | # | Decision | Status |
 |---|---|---|
-| D5 | Power BI page structure | Deferred to dashboard phase — active next |
-| D8 | GitHub repo setup | Active — push after documentation complete |
+| D5 | Power BI page structure | Deferred to dashboard phase: active next |
+| D8 | GitHub repo setup | Active: push after documentation complete |
 
 *Resolved since last update:*
-*D2 (benefits lever list) — locked 08 May 2026.*
-*D3 (grouped pay band rule) — locked 08 May 2026.*
-*D4 (modelling specification) — complete 11 May 2026. Regression and decision tree both done.*
-*D6 (commercial translation paragraph) — paragraph drafted 12 May 2026. Pending: Catherine to paste into Word report executive summary and confirm. Not yet marked complete.*
-*D7 (folder structure and script labels) — in progress. 01_R README.md created and folder audit under way. Final code hygiene checks still pending before GitHub commit.*
+*D2 (benefits lever list): locked 08 May 2026.*
+*D3 (grouped pay band rule): locked 08 May 2026.*
+*D4 (modelling specification): complete 11 May 2026. Regression and decision tree both done.*
+*D6 (commercial translation paragraph): paragraph drafted 12 May 2026. Pending: Catherine to paste into Word report executive summary and confirm. Not yet marked complete.*
+*D7 (folder structure and script labels): in progress. 01_R README.md created and folder audit under way. Final code hygiene checks still pending before GitHub commit.*
 
 ---
 

@@ -1,10 +1,19 @@
 # Archive
 
-This folder holds historical / superseded versions of project files.
-Nothing here is active. It exists only as a safety net so older work
-is not lost when scripts are split, restructured, or rewritten.
+This folder holds historical or superseded project files.
 
-Current contents:
-- (place a copy of the original Research_Revisit.R here as
-  Research_Revisit_legacy.R before splitting it into the numbered
-  scripts in 01_R/)
+Nothing in this folder is active. It exists only as a safety net so older work is not lost when scripts are split, restructured or rewritten.
+
+## Current use
+
+- Legacy versions of earlier R scripts.
+- Superseded exploratory files.
+- Older working materials kept for reference only.
+
+## Rule
+
+Files in this folder are not part of the active analysis pipeline.
+
+The active analysis scripts are in `01_R/`.
+The active SQL validation files are in `02_SQL/`.
+The active report-ready outputs are in `04_outputs/`.

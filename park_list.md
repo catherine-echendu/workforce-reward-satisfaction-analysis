@@ -2,7 +2,7 @@
 
 **Project:** Workforce Reward and Satisfaction Analysis
 **Created:** 28 April 2026
-**Last updated:** 12 May 2026
+**Last updated:** 14 May 2026
 **Purpose:** Records items deliberately not being worked on 
 now, with a clear reason and a trigger for when each item 
 becomes active. Nothing here is forgotten. Everything has 
@@ -12,7 +12,7 @@ a defined moment when it re-enters the workflow.
 
 ## Parked items
 
-**P1: Decision 2 — frozen benefits lever list (Path A vs B)**
+**P1: Decision 2: frozen benefits lever list (Path A vs B)**
 
 What it is: the decision on whether to carry five benefit levers into the analysis (pension, extra hours pay, training, flexi-time, job sharing) or add performance bonus variables as a sixth lever.
 

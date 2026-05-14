@@ -73,7 +73,7 @@ includes the outcome metric design, weighting approach, benefits lever decisions
 
 ## Project status
 
-**Status:** In progress — Word report update, Power BI dashboard and executive summary remaining. Weighted descriptive analysis complete across pay satisfaction, pay bands, pension, training and flexible working. Weighted regression complete: pay satisfaction is the dominant predictor and training is the strongest positive benefit lever. Decision-tree modelling complete after final control-variable alignment check, with the highest-risk segment confirmed. SQL cross-validation complete — 19 independent checks across all five benefit levers, all passed, maximum difference 0.005.
+**Status:** In progress. Word report update, Power BI dashboard and executive summary remaining. Weighted descriptive analysis complete across pay satisfaction, pay bands, pension, training and flexible working. Weighted regression complete: pay satisfaction is the dominant predictor and training is the strongest positive benefit lever. Decision-tree modelling complete after final control-variable alignment check, with the highest-risk segment confirmed. SQL cross-validation complete — 19 independent checks across all five benefit levers, all passed, maximum difference 0.005.
 
 ---
 
